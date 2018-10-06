@@ -47,7 +47,7 @@ public class ServletStatistic extends HttpServlet{
 				   resp.getWriter().write("<p> Извините на данную дату нет данных </p>");
 				   System.out.println("Извините на данную дату нет данных");
 			  }
-
+//
 			 System.out.println("context_path:"+req.getContextPath());
 			 Gson gson = new GsonBuilder().create();
 			String json = gson.toJson(listEntity);

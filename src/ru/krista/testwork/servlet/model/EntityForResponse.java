@@ -12,7 +12,7 @@ private String nameDisease;
 private int  patients;
 private int  issued;
 private int  trend;
-
+//changed to git hab show
 public EntityForResponse( int date, String federalDistrict, String subject, 
 		                            String nameHospital, String nameDisease,
 		                                  int patients, int issued, int trend) 

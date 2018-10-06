@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <script src="js/jquery-3.3.1.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<meta charset="UTF-8">
+<title>Статистика</title>
+
+<style>
+td, th {
+border: 1px solid #333;
+padding: 1px;
+text-align: center;
+}
+th{
+background-color: olive;
+}
+</style>
+</head>
+<body>
+	<h1 id="my">Таблица статистики</h1>
+	<script>
+	$(function(){
+		
+		
+		$("#but").click(function() { 
+			$.ajax({
+				url: 'http://localhost:8080/Disease_Statistic/orderByDate',
+              metod: 'GET',
+			   date: {date: 20130121};
+			
+			});		
+		});
+		
+		$( "#date" ).datepicker();
+	  
+	    			 
+	});
+
+</script>
+
+	<table id="statistic" style="border-collapse: collapse, width: 100%, border: 1px;">
+	<caption>Сводная таблица данных эпидемиологической ситуации в РФ </caption>
+		<tr>
+			<th id="date2">Дата</th>
+			<th>Федеральный округ</th>
+			<th>Субъект РФ</th>
+			<th>Наименование учреждения </th>
+			<th>Наименование болезни </th>
+			<th>Количество заболевших</th>
+			<th>Количество выздоровевших</th>
+			<th>Тенденция</th>
+		</tr>
+		
+		<tr>
+			<td><input type="text" id="date"></td>
+			<td>данные</td>
+			<td>данные</td>
+			<td>данные</td>
+			<td>данные</td>
+			<td>данные</td>
+			<td>данные</td>
+			<td>данные</td>
+		</tr>
+		<!--ряд с ячейками тела таблицы-->
+	</table>
+	<input type="button" id="but" value="Обновить">
+	 <p>Date: <input type="text" id="datepicker"></p>
+</body>
+</html>

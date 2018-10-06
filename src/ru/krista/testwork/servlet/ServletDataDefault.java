@@ -32,6 +32,8 @@ public class ServletDataDefault extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Connection conn =(Connection) req.getAttribute("CONN");
 		if (conn == null) {
+			
+			
 			conn = SettingsConn.getMySQLConnDefault();//данные из класса
 			req.setAttribute("CONN",conn);
 			}
